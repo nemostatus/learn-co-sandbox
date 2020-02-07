@@ -1,9 +1,9 @@
 class API 
-   self.get_data
-  response = RestClient.get("https://pokeapi.co/api/v2/ability/{id or name}/")
-    pokemon_array = JSON.parse(response.body)["results"]
-    pokemon_array.each do |pokemon|
-      Pokmon.new(pokemon)
+   def self.get_data
+    response = RestClient.get("https://swapi.co/api/starships/")
+    starships_array = JSON.parse(response.body)["results"]
+    starships_array.each do |starship|
+      Starship.new(starship)
     end 
-  end
+  end 
 end 

@@ -3,7 +3,8 @@ class PokeCli::CLI
     puts "Welcome pokemon trainer"
     puts "To use your pokedex and view a pokemon enter: 'pokedex'"
     puts "To continue on your journey enter: 'exit'"
-    Api.get_data
+    
+  API.get_data
     menu
   end 
   def menu 
@@ -19,7 +20,8 @@ class PokeCli::CLI
 end 
 def pokemon_list
   Pokemon.all.each_with_index do |pokemon,index|
-    puts "#{index +1}""
+      puts "#{index + 1}. #{pokemon.name}"
+    end
    puts ""
    puts ""
    puts "Which pokemon would you like stats about?"
